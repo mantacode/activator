@@ -12,4 +12,5 @@ RUN apt-get update \
   && echo '#!/bin/bash' > /usr/local/bin/sbt \
   && echo 'SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled"' >> /usr/local/bin/sbt \
   && echo "java \$SBT_OPTS -jar /opt/sbt/$SBT_VERSION/sbt-launch.jar \"\$@\"" >> /usr/local/bin/sbt \
-  && chmod 755 /usr/local/bin/sbt
+  && chmod 755 /usr/local/bin/sbt \
+  && sbt about
